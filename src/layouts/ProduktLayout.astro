@@ -59,7 +59,7 @@ const list = barvy.match(/[^\s,]+/g);
         `Skladem (${pocet[0]}ks)`;
     }
     button.addEventListener('click', () => {
-      img.src = `/public/${title}/${index}/1.jpg`;
+      img.src = `/${title}/${index}/1.jpg`;
       console.log(pocet);
       if (pocet[index - 1] == '0') {
         document.querySelector('.dostupnost').innerText = 'Vyprodáno';
