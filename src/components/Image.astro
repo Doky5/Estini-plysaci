@@ -1,0 +1,71 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<img id="img" src=`/public/${title}/1/1.jpg` />
+<div class="buttons">
+  <button class="p"></button>
+  <button class="d"></button>
+  <button class="t"></button>
+</div>
+
+<style>
+  .buttons {
+    display: flex;
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    bottom: 20px;
+    justify-content: center;
+  }
+  button:nth-child(1) {
+    background-position: right;
+  }
+  button {
+    background: linear-gradient(45deg, black, rgb(225, 7, 225));
+    background-size: 400%;
+    transition: 1s;
+    margin: 0 2px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border: rgb(137, 137, 137) solid 2px;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+</style>
+
+<script define:vars={{ title }}>
+  const btn1 = document.querySelector('.p');
+  const btn2 = document.querySelector('.d');
+  const btn3 = document.querySelector('.t');
+  const img = document.getElementById('img');
+  btn1.addEventListener('click', () => {
+    let path = img.src.split('/');
+    img.src = `/public/${title}/${path[5]}/1.jpg`;
+    console.log(img.src);
+    btn1.style.backgroundPosition = 'right';
+    btn2.style.backgroundPosition = 'left';
+    btn3.style.backgroundPosition = 'left';
+  });
+  btn2.addEventListener('click', () => {
+    let path = img.src.split('/');
+    img.src = `/public/${title}/${path[5]}/2.jpg`;
+    console.log(img.src);
+    btn1.style.backgroundPosition = 'left';
+    btn2.style.backgroundPosition = 'right';
+    btn3.style.backgroundPosition = 'left';
+  });
+  btn3.addEventListener('click', () => {
+    let path = img.src.split('/');
+    img.src = `/public/${title}/${path[5]}/3.jpg`;
+    console.log(img.src);
+    btn1.style.backgroundPosition = 'left';
+    btn2.style.backgroundPosition = 'left';
+    btn3.style.backgroundPosition = 'right';
+  });
+</script>
