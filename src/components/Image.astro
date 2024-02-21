@@ -46,7 +46,7 @@ const { title } = Astro.props;
   const img = document.getElementById('img');
   btn1.addEventListener('click', () => {
     let path = img.src.split('/');
-    img.src = `/public/${title}/${path[5]}/1.jpg`;
+    img.src = `/${title}/${path[5]}/1.jpg`;
     console.log(img.src);
     btn1.style.backgroundPosition = 'right';
     btn2.style.backgroundPosition = 'left';
@@ -54,7 +54,7 @@ const { title } = Astro.props;
   });
   btn2.addEventListener('click', () => {
     let path = img.src.split('/');
-    img.src = `/public/${title}/${path[5]}/2.jpg`;
+    img.src = `/${title}/${path[5]}/2.jpg`;
     console.log(img.src);
     btn1.style.backgroundPosition = 'left';
     btn2.style.backgroundPosition = 'right';
@@ -62,7 +62,7 @@ const { title } = Astro.props;
   });
   btn3.addEventListener('click', () => {
     let path = img.src.split('/');
-    img.src = `/public/${title}/${path[5]}/3.jpg`;
+    img.src = `/${title}/${path[5]}/3.jpg`;
     console.log(img.src);
     btn1.style.backgroundPosition = 'left';
     btn2.style.backgroundPosition = 'left';
