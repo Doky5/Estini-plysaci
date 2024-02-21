@@ -15,8 +15,9 @@ const chars = {
   'é': 'e',
   'ú': 'u',
   'ů': 'u',
+  " ": "_"
 };
-string = title.replace(/[ěščřžýáíéúů]/g, m => chars[m]);
+string = title.replace(/[ěščřžýáíéúů ]/g, m => chars[m]);
 ---
 
 <li class="link-card">
