@@ -7,8 +7,9 @@ let { produkt } = Astro.props;
 
 <dialog id="dialog">
   <h2 id="paragraph"></h2>
-  <form netlify
+  <form 
     method="POST"
+    data-netlify="true"
   >
   <input type="text" name="jméno" placeholder="Jméno" /><br />
   <input type="hidden" name="produkt" id="produkt" />
