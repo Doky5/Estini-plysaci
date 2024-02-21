@@ -1,3 +1,9 @@
+---
+interface Props {
+  produkt: string
+}
+---
+
 <dialog id="dialog">
   <h2 id="paragraph"></h2>
   <form
@@ -17,7 +23,7 @@
     </button>
   </form>
 </dialog>
-<script define:vars={{ produkt, barva }}>
+<script define:vars={{ produkt }}>
   const dialog = document.getElementById("dialog");
   const paragraph = document.getElementById("paragraph");
   const pojem = document.getElementById("produkt");
