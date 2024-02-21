@@ -46,6 +46,7 @@ const { title } = Astro.props;
   const img = document.getElementById('img');
   let path = img.src.replace(".", "/").split('/')
   btn1.addEventListener('click', () => {
+    console.log(path)
     img.src = `/${title}/${path[5]}/1.jpg`;
     console.log(img.src);
     btn1.style.backgroundPosition = 'right';
