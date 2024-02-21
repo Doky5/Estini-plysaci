@@ -3,10 +3,24 @@ interface Props {
   title: string;
 }
 const { title } = Astro.props;
+const chars = {
+  'ě': 'e',
+  'š': 's',
+  'č': 'c',
+  'ř': 'r',
+  'ž': 'z',
+  'ý': 'y',
+  'á': 'a',
+  'í': 'i',
+  'é': 'e',
+  'ú': 'u',
+  'ů': 'u',
+};
+string = title.replace(/[ěščřžýáíéúů]/g, m => chars[m]);
 ---
 
 <li class="link-card">
-  <a href=`./produkty/${title}`>
+  <a href=`./produkty/${string}`>
     <img src=`/${title}/1/1.jpg` alt={title} />
     <h2>
       {title}
