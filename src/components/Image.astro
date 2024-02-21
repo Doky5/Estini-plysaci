@@ -44,8 +44,7 @@ const { title } = Astro.props;
   const btn2 = document.querySelector('.d');
   const btn3 = document.querySelector('.t');
   const img = document.getElementById('img');
-  let path = img.src.split('/')
-  path = path.split('.');
+  let path = img.src.replace(".", "/").split('/')
   btn1.addEventListener('click', () => {
     img.src = `/${title}/${path[5]}/1.jpg`;
     console.log(img.src);
