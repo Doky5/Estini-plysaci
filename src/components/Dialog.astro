@@ -7,7 +7,7 @@ let { produkt } = Astro.props;
 
 <dialog id="dialog">
   <h2 id="paragraph"></h2>
-  <form name="zakazka" method="POST"  data-netlify="true" onSubmit="submit" data-netlify-honeypoint="bot-field">
+  <form name="zakazka" method="POST"  data-netlify="true">
   <input type="text" name="jmeno" placeholder="Jméno" required /><br />
   <input type="hidden" name="produkt" id="produkt" />
   <input type="hidden" name="barva" id="barva" />
@@ -15,7 +15,7 @@ let { produkt } = Astro.props;
     <input type="email" name="email" placeholder="e-mail" required/><br />
     <p>Na e-mail Vám napíšeme, kdy si zboží můžete vyzvednout</p>
 
-    <button type="submit">
+    <button type="submit" name="button">
       <span></span>
       Objednat
       <span></span>
