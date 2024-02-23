@@ -55,6 +55,7 @@ const list = barvy.match(/[^\s,]+/g);
   }
 </style>
 <script define:vars={{ barvy, title, pocet, list }}>
+  let currentColor = 1;
   for (let index = 1; index <= list.length; index++) {
     let button = document.querySelector(`p button:nth-child(${index})`);
     button.style.backgroundColor = list[index - 1];
@@ -69,7 +70,7 @@ const list = barvy.match(/[^\s,]+/g);
     button.addEventListener('click', () => {
       img.src = `/${title}/${index}/1.jpg`;
       console.log(pocet);
-      let currentColor = index;
+      currentColor = index;
       if (pocet[index - 1] == '0') {
         document.querySelector('.dostupnost').innerText = 'Vyprodáno';
         document.querySelector('.dostupnost').background = 'red';
@@ -109,7 +110,6 @@ const list = barvy.match(/[^\s,]+/g);
     btn3.style.backgroundPosition = 'right';
   });
 </script>
-
 
 <style>
   .dostupnost {
