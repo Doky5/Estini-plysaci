@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<img id="img" src=`/${title}/1/1.jpg` />
+<div class="buttons">
+  <button class="p"></button>
+  <button class="d"></button>
+  <button class="t"></button>
+</div>
+
+<style>
+  .buttons {
+    display: flex;
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    bottom: 20px;
+    justify-content: center;
+  }
+  button:nth-child(1) {
+    background-position: right;
+  }
+
+  button {
+    background: linear-gradient(45deg, black, rgb(225, 7, 225));
+    background-size: 400%;
+    transition: 1s;
+    margin: 0 2px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border: rgb(137, 137, 137) solid 2px;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+</style>
+
+<script define:vars={{ title }}></script>
