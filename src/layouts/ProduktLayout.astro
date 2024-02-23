@@ -61,6 +61,7 @@ const list = barvy.match(/[^\s,]+/g);
     button.style.display = 'inline';
     if (pocet[0] == '0') {
       document.querySelector('.dostupnost').innerText = 'Vyprodáno';
+      document.querySelector('.dostupnost').background = 'red';
     } else {
       document.querySelector('.dostupnost').innerText =
         `Skladem (${pocet[0]}ks)`;
@@ -68,8 +69,10 @@ const list = barvy.match(/[^\s,]+/g);
     button.addEventListener('click', () => {
       img.src = `/${title}/${index}/1.jpg`;
       console.log(pocet);
+      let currentColor = index;
       if (pocet[index - 1] == '0') {
         document.querySelector('.dostupnost').innerText = 'Vyprodáno';
+        document.querySelector('.dostupnost').background = 'red';
         console.log(pocet[index - 1]);
       } else {
         document.querySelector('.dostupnost').innerText =
@@ -82,8 +85,31 @@ const list = barvy.match(/[^\s,]+/g);
   btn.addEventListener('click', () => {
     Objednávka(title);
   });
+
+  const btn1 = document.querySelector('.p');
+  const btn2 = document.querySelector('.d');
+  const btn3 = document.querySelector('.t');
+  const img = document.getElementById('img');
+  btn1.addEventListener('click', () => {
+    img.src = `/${title}/${currentColor}/1.jpg`;
+    btn1.style.backgroundPosition = 'right';
+    btn2.style.backgroundPosition = 'left';
+    btn3.style.backgroundPosition = 'left';
+  });
+  btn2.addEventListener('click', () => {
+    img.src = `/${title}/${currentColor}/2.jpg`;
+    btn1.style.backgroundPosition = 'left';
+    btn2.style.backgroundPosition = 'right';
+    btn3.style.backgroundPosition = 'left';
+  });
+  btn3.addEventListener('click', () => {
+    img.src = `/${title}/${currentColor}/3.jpg`;
+    btn1.style.backgroundPosition = 'left';
+    btn2.style.backgroundPosition = 'left';
+    btn3.style.backgroundPosition = 'right';
+  });
 </script>
-<script define:vars={{ kusu }}></script>
+
 
 <style>
   .dostupnost {
@@ -113,6 +139,9 @@ const list = barvy.match(/[^\s,]+/g);
   .cards {
     max-width: 1000px;
     padding-left: 200px;
+    @media (width<600px) {
+      padding-left: 20px;
+    }
   }
 
   p.k {
