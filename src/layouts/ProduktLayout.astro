@@ -47,6 +47,13 @@ const list = barvy.match(/[^\s,]+/g);
     </ul>
   </div>
 </Layout>
+<style>
+  .dostupnost {
+    @media (width<600px) {
+      margin: 0;
+    }
+  }
+</style>
 <script define:vars={{ barvy, title, pocet, list }}>
   for (let index = 1; index <= list.length; index++) {
     let button = document.querySelector(`p button:nth-child(${index})`);
@@ -149,7 +156,7 @@ const list = barvy.match(/[^\s,]+/g);
     background: #f2c6c6;
     position: relative;
 
-    @media (width < 500px) {
+    @media (width < 600px) {
       float: none;
       display: block;
       width: 100%;
