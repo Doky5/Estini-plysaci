@@ -33,6 +33,9 @@ const { title } = Astro.props;
       position: absolute;
       left: 2rem;
       top: 2rem;
+      @media (width < 500px) {
+        position: relative;
+      }
     }
     @media (width < 564) {
       h1 {
