@@ -15,7 +15,7 @@ const list = barvy.match(/[^\s,]+/g);
 ---
 
 <Layout title={title}>
-  <Dialog produkt={title}/>
+  <Dialog produkt={title} />
   <div class="image"><Image title={title} /></div>
   <h1 class="text-gradient">{title}</h1>
   <p>Cena: {cena}</p><br />
@@ -148,6 +148,10 @@ const list = barvy.match(/[^\s,]+/g);
     float: left;
     background: #f2c6c6;
     position: relative;
+
+    @media (width < 500px) {
+      float: none;
+    }
   }
   img {
     border-radius: 10px;
