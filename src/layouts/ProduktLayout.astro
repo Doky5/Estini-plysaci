@@ -116,9 +116,9 @@ const list = barvy.match(/[^\s,]+/g);
 
   function Objednávka(produkt) {
     dialog.showModal();
-    barva.value = pocet[currentColor - 1];
+    barva.value = list[currentColor - 1];
     pojem.value = produkt;
-    console.log(pojem.value, barva.value, pocet[currentColor-1]);
+    console.log(pojem.value, barva.value);
     paragraph.innerHTML = produkt;
   }
 </script>
