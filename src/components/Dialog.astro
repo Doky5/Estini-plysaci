@@ -1,17 +1,17 @@
 ---
 interface Props {
-  produkt: string
+  produkt: string;
 }
 let { produkt } = Astro.props;
 ---
 
 <dialog id="dialog">
   <h2 id="paragraph"></h2>
-  <form name="zakazka" method="POST"  action="https://getform.io/f/1aKPMzbQ">
-  <input type="text" name="jmeno" placeholder="Jméno" required /><br />
-  <input type="hidden" name="produkt" id="produkt" />
-  <input type="hidden" name="barva" id="barva" />
-    <input type="email" name="email" placeholder="e-mail" required/><br />
+  <form name="zakazka" method="POST" action="https://getform.io/f/1aKPMzbQ">
+    <input type="text" name="jmeno" placeholder="Jméno" required /><br />
+    <input type="hidden" name="produkt" id="produkt" />
+    <input type="hidden" name="barva" id="barva" />
+    <input type="email" name="email" placeholder="e-mail" required /><br />
     <p>Na e-mail Vám napíšeme, kdy si zboží můžete vyzvednout</p>
 
     <button>
@@ -22,14 +22,14 @@ let { produkt } = Astro.props;
   </form>
 </dialog>
 <script define:vars={{ produkt }}>
-  const dialog = document.getElementById("dialog");
-  const paragraph = document.getElementById("paragraph");
-  const pojem = document.getElementById("produkt");
-function Objednávka(produkt) {
-    dialog.showModal()
+  const dialog = document.getElementById('dialog');
+  const paragraph = document.getElementById('paragraph');
+  const pojem = document.getElementById('produkt');
+  function Objednávka(produkt) {
+    dialog.showModal();
     pojem.value = produkt;
     paragraph.innerHTML = produkt;
-}
+  }
 </script>
 <style>
   dialog {

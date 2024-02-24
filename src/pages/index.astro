@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Skladem from '../components/Skladem.astro';
 ---
 
 <Layout title="Esterčini plyšáci">
@@ -9,20 +10,10 @@ import Card from '../components/Card.astro';
     <img src="/pozadí.jpg" />
     <h2>Novinky</h2>
     <ul role="list" class="link-card-grid">
-      <Card title="Antistresová houbička" />
-      <Card title="Dinosauřík" />
-      <Card title="Mini tučňák" />
+      <Card title="Antistresová houbička" color="1"/>
+      <Card title="Dinosauřík" color="1"/>
+      <Card title="Mini tučňák" color="1"/>
     </ul>
-    <h2>Skladem</h2>
-    <ul role="list" class="link-card-grid">
-      <Card title="Králíček" />
-      <Card title="Mini tučňák" />
-      <Card title="Kuře" />
-      <Card title="Tučňák" />
-      <Card title="Kravička" />
-      <Card title="Pejsek" />
-    </ul>
+    <Skladem />
   </main>
 </Layout>
-
-

@@ -3,6 +3,7 @@ import Layout from './Layout.astro';
 import Card from '../components/Card.astro';
 import Image from '../components/Image.astro';
 import Dialog from '../components/Dialog.astro';
+import Skladem from '../components/Skladem.astro';
 interface Props {
   title: string;
   cena: string;
@@ -35,16 +36,11 @@ const list = barvy.match(/[^\s,]+/g);
   <div class="cards">
     <h2>Doporučujeme</h2>
     <ul role="list" class="link-card-grid">
-      <Card title="Antistresová houbička" />
-      <Card title="Dinosauřík" />
-      <Card title="Mini tučňák" />
+      <Card title="Antistresová houbička" color="1"/>
+      <Card title="Dinosauřík" color="1"/>
+      <Card title="Mini tučňák" color="1"/>
     </ul>
-    <h2>Skladem</h2>
-    <ul role="list" class="link-card-grid">
-      <Card title="Králíček" />
-      <Card title="Kuře" />
-      <Card title="Mini tučňák" />
-    </ul>
+    <Skladem>
   </div>
 </Layout>
 <style>

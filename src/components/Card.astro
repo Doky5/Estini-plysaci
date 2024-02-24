@@ -1,8 +1,9 @@
 ---
 interface Props {
   title: string;
+  color: string;
 }
-const { title } = Astro.props;
+const { title, color } = Astro.props;
 const chars = {
   'ě': 'e',
   'š': 's',
@@ -24,7 +25,7 @@ const string = title.replace(/[ěščřžýáíéúůň ]/g, m => chars[m]);
 
 <li class="link-card">
   <a href=`/produkty/${ string }/`>
-    <img src=`/${title}/1/1.jpg` alt={title} />
+    <img src=`/${title}/${color}/1.jpg` alt={title} />
     <h2>
       {title}
       <span>&rarr;</span>
